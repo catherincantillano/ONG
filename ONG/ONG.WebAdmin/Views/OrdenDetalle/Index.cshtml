@@ -1,0 +1,83 @@
+﻿@model  ONG.BL.Orden
+
+@{
+    ViewBag.Title = "Orden Detalle";
+}
+
+<h2>Detalle de la Orden No: @Model.Id</h2>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>Beneficiario</td>
+        <td>@Model.Beneficiario.Nombre</td>
+    </tr>
+    <tr>
+        <td>Telefono</td>
+        <td>@Model.Beneficiario.Telefono</td>
+    </tr>
+    <tr>
+        <td>Direccion</td>
+        <td>@Model.Beneficiario.Direccion</td>
+    </tr>
+    <tr>
+        <td>Fecha</td>
+        <td>@Model.Fecha</td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>@Model.Total</td>
+    </tr>
+</table>
+
+
+<p>
+    @Html.ActionLink("Nuevo Beneficio", "Crear", new { id = Model.Id })
+</p>
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+           Beneficio
+        </th>
+        <th>
+           Mes(es)
+        </th>
+        <th>
+            Valor
+        </th>
+        <th>
+            Total
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.ListadeOrdenDetalle) {
+    <tr>
+        <td>
+            <img src="@item.Beneficio.UrlImagen" alt="@item.Beneficio.descripcion" style="max-width: 64px; height: auto;" /> 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beneficio.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Regresar a Ordenes", "Index","Ordenes")
