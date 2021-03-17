@@ -23,7 +23,10 @@ namespace ONG.BL
         public List<Beneficiario> ObtenerBeneficiariosActivos()
         {
 
-            ListadeBeneficiarios = _contexto.Beneficiarios.ToList();
+            ListadeBeneficiarios = _contexto.Beneficiarios
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Nombre)
+                .ToList();
             return ListadeBeneficiarios;
         }
 
@@ -40,6 +43,7 @@ namespace ONG.BL
                 beneficiarioExistente.Nombre = beneficiario.Nombre;
                 beneficiarioExistente.Telefono = beneficiario.Telefono;
                 beneficiarioExistente.Direccion = beneficiario.Direccion;
+                beneficiarioExistente.Activo = beneficiario.Activo;
 
             }
 

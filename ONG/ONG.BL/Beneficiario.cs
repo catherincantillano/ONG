@@ -10,12 +10,12 @@ namespace ONG.BL
     {
         public Beneficiario()
         {
-            Activo = false;
+            Activo = true;
         }
 
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public int Telefono { get; set; }
+        public string Telefono { get; set; }
         public string Direccion { get; set; }
         public bool Activo { get; set; }
     }
