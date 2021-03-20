@@ -54,6 +54,7 @@ namespace ONG.BL
             {
                 var beneficioExistente = _contexto.Beneficios.Find(beneficio.id);
                 beneficioExistente.descripcion = beneficio.descripcion;
+                beneficioExistente.CategoriaId = beneficio.CategoriaId;
                 beneficioExistente.valor = beneficio.valor;
                 beneficioExistente.UrlImagen = beneficio.UrlImagen;
                 beneficioExistente.Activo = beneficio.Activo;

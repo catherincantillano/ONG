@@ -19,7 +19,7 @@ namespace ONG.WebAdmin.Controllers
         // GET: Beneficiarios
         public ActionResult Index()
         {
-            var listadeBeneficiarios = _beneficiariosBL.ObtenerBeneficiariosActivos();
+            var listadeBeneficiarios = _beneficiariosBL.ObtenerBeneficiarios();
 
             return View(listadeBeneficiarios);
         }

@@ -19,6 +19,14 @@ namespace ONG.BL
             ListadeBeneficiarios = new List<Beneficiario>();
         }
 
+        public List<Beneficiario> ObtenerBeneficiarios()
+        {
+            ListadeBeneficiarios = _contexto.Beneficiarios
+                .OrderBy(r => r.Nombre)
+                .ToList();
+
+            return ListadeBeneficiarios;
+        }
 
         public List<Beneficiario> ObtenerBeneficiariosActivos()
         {

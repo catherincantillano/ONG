@@ -77,7 +77,7 @@ namespace ONG.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Beneficio beneficio)
+        public ActionResult Editar(Beneficio beneficio, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +86,11 @@ namespace ONG.WebAdmin.Controllers
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(beneficio);
                 }
+                if (imagen != null)
+                {
+                    beneficio.UrlImagen = GuardarImagen(imagen);
+                }
+
                 _beneficiosBL.GuardarBeneficio(beneficio);
 
                 return RedirectToAction("Index");
