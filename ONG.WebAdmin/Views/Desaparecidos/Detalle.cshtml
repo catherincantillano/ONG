@@ -1,0 +1,98 @@
+﻿@model ONG.BL.Desaparecido
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2 class="text-center">Detalles del Registro</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Primer_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Primer_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Segundo_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segundo_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Primer_Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Primer_Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Segundo_Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segundo_Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Residencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Residencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </dt>
+
+        <dd>
+            <img src="@Model.UrlImagen" style="width:200px; height:auto;" />
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

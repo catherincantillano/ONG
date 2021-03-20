@@ -1,0 +1,25 @@
+﻿@model ONG.BL.Categoria
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2 class="text-center">Detalle de Categoría</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar a la lista ", "Index")
+</p>
